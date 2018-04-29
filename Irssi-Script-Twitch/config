@@ -1,0 +1,35 @@
+servers = (
+  {
+    address = "irc.chat.twitch.tv";
+    chatnet = "twitch";
+    port = "6667";
+    use_ssl = "no";
+    ssl_verify = "no";
+    autoconnect = "no";
+  }
+);
+
+chatnets = {
+  twitch = {
+    type = "IRC";
+    autosendcmd = "echo https://dev.twitch.tv/docs/irc:; echo quote CAP REQ :twitch.tv/membership; echo quote CAP REQ :twitch.tv/commands; echo quote CAP REQ :twitch.tv/tags;";
+  };
+};
+
+channels = (
+  { name = "#archonthewizard"; chatnet = "twitch"; autojoin = "no"; },
+);
+settings = {
+  core = {
+    real_name = "Unknown";
+    user_name = "user";
+    nick = "user";
+    timestamp_format = "%H:%M:%S";
+  };
+  "fe-text" = { actlist_sort = "refnum"; };
+  "fe-common/core" = {
+    autolog = "no";
+    autolog_path = "/var/log/irclogs/$tag/$0.log";
+  };
+};
+logs = { };

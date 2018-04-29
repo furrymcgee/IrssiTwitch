@@ -1,0 +1,12 @@
+# Connect on startup needs TWITCH_TOKEN as environment variable
+# For help about scripts type /help script in irssi
+# See also
+# - https://irssi.org/
+# - https://dev.twitch.tv/docs/v5/guides/irc/
+# - http://twitchapps.com/tmi/
+
+# Login via irssi command and TWITCH_TOKEN
+script exec Irssi::command("connect irc.chat.twitch.tv 6667 oauth:$$ENV{TWITCH_TOKEN}")
+
+# Load the script module
+script load Twitch
